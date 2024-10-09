@@ -1,0 +1,16 @@
+export const viloyatlar = [
+    { value: "andijon", label: "Andijon" },
+    { value: "buxoro", label: "Buxoro" },
+    { value: "jizzax", label: "Jizzax" },
+    { value: "qashqadaryo", label: "Qashqadaryo" },
+    { value: "samarqand", label: "Samarqand" },
+    { value: "sirdaryo", label: "Sirdaryo" },
+    { value: "surxondaryo", label: "Surxondaryo" },
+    { value: "toshkent", label: "Toshkent" },
+    { value: "fargona", label: "Farg'ona" },
+    { value: "namangan", label: "Namangan" },
+    { value: "navoiy", label: "Navoiy" },
+    { value: "qoraqalpogiston", label: "Qoraqalpog'iston" },
+    { value: "toshkent_shahar", label: "Toshkent shahar" },
+    { value: "toshkent_viloyat", label: "Toshkent viloyat" },
+]

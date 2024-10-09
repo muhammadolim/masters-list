@@ -3,67 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Master List</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Master List App</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Function to fetch the data from the API
-        async function fetchData() {
-          try {
-            const response = await fetch(
-              "https://crm.greatsoft.uz/api/master_list/4"
-            );
-            const data = await response.json();
-            renderData(data);
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
-        }
-
-        // Function to render the fetched data
-        function renderData(data) {
-          const container = document.getElementById("master-list");
-          const leadInfo = `
-          <div class="bg-gray-100 p-4 rounded-lg shadow-lg mb-4">
-            <h1 class="text-2xl font-bold">${data.name}</h1>
-            <p class="text-gray-700">Lead Name: ${data.lead_name}</p>
-            <p class="text-gray-700">Phone: ${data.phone_number}</p>
-            <h2 class="text-xl font-semibold mt-4">Categories</h2>
-            <ul class="list-disc ml-6 text-gray-600">
-              ${data.category.map((cat) => `<li>${cat.name}</li>`).join("")}
-            </ul>
-            <h2 class="text-xl font-semibold mt-4">Sub Categories</h2>
-            <ul class="list-disc ml-6 text-gray-600">
-              ${data.sub_category.map((sub) => `<li>${sub.name}</li>`).join("")}
-            </ul>
-          </div>
-        `;
-          container.innerHTML += leadInfo;
-
-          data.masters.forEach((master) => {
-            const masterItem = `
-            <div class="bg-white p-4 mb-4 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold">${master.name}</h3>
-              <p class="text-gray-600">Phone: ${master.phone_number}</p>
-              <p class="text-gray-600">Region: ${master.viloyat}</p>
-              <p class="text-gray-600">Total Rating: ${master.total_rating}</p>
-              <p class="text-gray-600">Jobs Completed: ${master.caount_of_jobs}</p>
-              <p class="text-gray-600">Price: ${master.workers_price} UZS</p>
-            </div>
-          `;
-            container.innerHTML += masterItem;
-          });
-        }
-
-        // Call the fetchData function to load data on page load
-        fetchData();
-      });
-    </script>
   </head>
-  <body class="bg-gray-50 p-6">
-    <div class="container mx-auto">
-      <h1 class="text-3xl font-bold mb-6 text-center">Master List</h1>
-      <div id="master-list"></div>
-    </div>
+  <body class="antialiased bg-gray-50">
+    <div id="app"></div>
+    <!-- Include the Vue build script -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
